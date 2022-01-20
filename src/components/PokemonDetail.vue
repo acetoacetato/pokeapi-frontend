@@ -65,7 +65,9 @@ export default {
         })
         .then((data) => {
           console.log(data);
+          // Formats the types of the pokemon with / between them in case there is more than one
           data.type = data.type.join(" / ");
+          // Formats the evolution chain with -> between each evolution name
           data.evolutions = data.evolutions.join(" \u2192 ");
           this.pokemon = data;
           this.show = true;

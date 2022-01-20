@@ -42,11 +42,13 @@ export default {
           if (resp.status === 200) return resp.json();
         })
         .then((data) => {
+          // Format the url for the next pokemon to be loaded
           this.nextUrl = this.apiUrl + data.nextUrl;
-          console.log(this.nextUrl);
-          console.log(data);
+
+          // Add the new pokemon to the list
           data.results.forEach((pokemon) => {
             pokemon.url = this.apiUrl + pokemon.id;
+            // Formats the type of the pokemon with / between each one, in case there is more than one
             pokemon.type = pokemon.type.join(" / ");
             console.log(pokemon);
             this.pokemons.push(pokemon);
@@ -56,6 +58,7 @@ export default {
           console.log(error);
         });
     },
+    // To load more pokemon when the end of the page is reached
     scrollTrigger() {
       const observer = new IntersectionObserver((entries) => {
         entries.forEach((entry) => {
