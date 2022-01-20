@@ -21,7 +21,7 @@ import PokemonDetail from "./PokemonDetail.vue";
 export default {
   data: () => {
     return {
-      apiUrl: "http://localhost:8080/pokeapi/",
+      apiUrl: "https://pokeapi-backend.herokuapp.com/pokeapi/",
       pokemonUrl: "",
       showDetail: false,
     };
