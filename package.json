@@ -3,16 +3,18 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "postinstall": "NODE_ENV=development && npm run client-install && npm run client-build && NODE_ENV=production",
-    "start": "vue-cli-service serve",
+    "postinstall": "npm run build",
+    "start": "node server.js",
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build",
     "lint": "vue-cli-service lint"
   },
   "dependencies": {
-    "vue": "^2.6.11",
+    "express": "^4.17.2",
     "postcss-loader": "^4.2.0",
-    "sass-loader": "10.1.1"
+    "sass-loader": "10.1.1",
+    "serve-static": "^1.14.2",
+    "vue": "^2.6.11"
   },
   "devDependencies": {
     "@vue/cli-plugin-babel": "~4.5.0",
