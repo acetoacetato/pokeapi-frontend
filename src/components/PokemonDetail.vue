@@ -73,7 +73,10 @@ export default {
           this.show = true;
         })
         .catch((error) => {
-          console.log(error);
+          this.pokemon = null;
+          this.show = true;
+
+          //this.closeDetail();
         });
     },
     closeDetail() {
